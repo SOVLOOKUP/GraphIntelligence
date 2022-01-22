@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_tasks",
+  "info": {
+    "singularName": "gi-task",
+    "pluralName": "gi-tasks",
+    "displayName": "GITask"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "building",
+        "failed",
+        "success"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_graph_intelligence_meta_datetimes",
+  "info": {
+    "displayName": "datetime",
+    "icon": "bullseye"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

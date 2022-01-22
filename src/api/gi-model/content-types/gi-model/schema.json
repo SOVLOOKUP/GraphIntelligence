@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_models",
+  "info": {
+    "singularName": "gi-model",
+    "pluralName": "gi-models",
+    "displayName": "GIModel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}

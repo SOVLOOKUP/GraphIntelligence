@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_graph_intelligence_meta_strings",
+  "info": {
+    "displayName": "string",
+    "icon": "edit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

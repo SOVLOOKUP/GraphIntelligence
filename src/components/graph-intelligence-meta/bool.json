@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_graph_intelligence_meta_bools",
+  "info": {
+    "displayName": "bool",
+    "icon": "check-square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
