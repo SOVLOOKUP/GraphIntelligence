@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "db_addresses",
+  "info": {
+    "singularName": "db-address",
+    "pluralName": "db-addresses",
+    "displayName": "dbAddress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "domain": {
+      "type": "string"
+    }
+  }
+}

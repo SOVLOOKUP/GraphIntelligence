@@ -4,7 +4,8 @@
   "info": {
     "singularName": "gi-task",
     "pluralName": "gi-tasks",
-    "displayName": "GITask"
+    "displayName": "GITask",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,9 +19,10 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "building",
+        "running",
         "failed",
-        "success"
+        "success",
+        "pending"
       ],
       "required": true
     }

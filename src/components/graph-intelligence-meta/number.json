@@ -7,12 +7,8 @@
   },
   "options": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "tag": {
-      "type": "string",
+    "tagid": {
+      "type": "integer",
       "required": true
     }
   }

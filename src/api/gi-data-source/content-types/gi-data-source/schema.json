@@ -16,26 +16,13 @@
       "type": "string",
       "required": true
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "raw",
-        "nodes",
-        "edges"
-      ],
-      "required": true
-    },
-    "meta": {
-      "type": "dynamiczone",
-      "components": [
-        "graph-intelligence-meta.string",
-        "graph-intelligence-meta.bool",
-        "graph-intelligence-meta.number",
-        "graph-intelligence-meta.datetime"
-      ]
-    },
     "data": {
       "type": "json"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": true,
+      "component": "graph-intelligence.type"
     }
   }
 }

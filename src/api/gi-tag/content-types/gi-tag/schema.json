@@ -16,15 +16,8 @@
       "type": "string",
       "required": true
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "number",
-        "string",
-        "bool",
-        "datetime"
-      ],
-      "required": true
+    "description": {
+      "type": "text"
     }
   }
 }
