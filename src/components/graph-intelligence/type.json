@@ -16,7 +16,8 @@
       "enum": [
         "string",
         "number",
-        "boolean"
+        "boolean",
+        "bigint"
       ],
       "required": true
     }

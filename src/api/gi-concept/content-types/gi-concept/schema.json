@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -16,13 +16,15 @@
       "type": "string",
       "required": true
     },
-    "tag": {
-      "type": "component",
-      "repeatable": true,
-      "component": "graph-intelligence-meta.number"
-    },
     "jsonldurl": {
       "type": "string"
+    },
+    "tag": {
+      "displayName": "tag",
+      "type": "component",
+      "repeatable": true,
+      "component": "graph-intelligence.tag",
+      "required": false
     }
   }
 }

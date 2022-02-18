@@ -4,10 +4,11 @@
   "info": {
     "singularName": "db-address",
     "pluralName": "db-addresses",
-    "displayName": "dbAddress"
+    "displayName": "dbAddress",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
