@@ -16,15 +16,12 @@
       "type": "string",
       "required": true
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "running",
-        "failed",
-        "success",
-        "pending"
-      ],
+    "taskMeta": {
+      "type": "json",
       "required": true
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
