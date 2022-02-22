@@ -8,11 +8,13 @@
   "scripts": {
     "dev": "strapi dev",
     "start": "strapi start",
+    "dist": "electron-builder --publish never",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {
-    "electron": "^17.0.1"
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.1.0",
@@ -28,5 +30,7 @@
     "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "build": {
+    "asar": false
+  }
 }
