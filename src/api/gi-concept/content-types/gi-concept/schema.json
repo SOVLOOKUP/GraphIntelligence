@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_concepts",
+  "info": {
+    "singularName": "gi-concept",
+    "pluralName": "gi-concepts",
+    "displayName": "GIConcept",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "jsonldurl": {
+      "type": "string"
+    },
+    "tag": {
+      "displayName": "tag",
+      "type": "component",
+      "repeatable": true,
+      "component": "graph-intelligence.tag",
+      "required": false
+    }
+  }
+}

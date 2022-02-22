@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_data_sources",
+  "info": {
+    "singularName": "gi-data-source",
+    "pluralName": "gi-data-sources",
+    "displayName": "GIDataSource",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "json"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": true,
+      "component": "graph-intelligence.type"
+    }
+  }
+}

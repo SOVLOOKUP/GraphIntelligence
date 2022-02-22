@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_graph_intelligence_tags",
+  "info": {
+    "displayName": "tag",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "gi_tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gi-tag.gi-tag"
+    }
+  }
+}

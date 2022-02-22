@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_tags",
+  "info": {
+    "singularName": "gi-tag",
+    "pluralName": "gi-tags",
+    "displayName": "GITag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

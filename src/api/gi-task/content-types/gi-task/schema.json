@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_tasks",
+  "info": {
+    "singularName": "gi-task",
+    "pluralName": "gi-tasks",
+    "displayName": "GITask",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "taskMeta": {
+      "type": "json",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

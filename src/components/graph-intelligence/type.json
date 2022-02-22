@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_graph_intelligence_types",
+  "info": {
+    "displayName": "type",
+    "icon": "bezier-curve",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "string",
+        "number",
+        "boolean",
+        "bigint"
+      ],
+      "required": true
+    }
+  }
+}
