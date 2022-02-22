@@ -1,23 +1,25 @@
 {
-  "name": "my-project",
+  "name": "graphintelligence",
   "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "version": "0.0.0",
+  "author": "sovlookup<gonorth@qq.com>",
+  "description": "GraphIntelligence 知识图谱一体化构建工具",
+  "main": "index.js",
   "scripts": {
     "dev": "strapi dev",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
-  "dependencies": {
-    "@strapi/strapi": "4.1.0",
-    "@strapi/plugin-users-permissions": "4.1.0",
-    "@strapi/plugin-i18n": "4.1.0",
-    "sqlite3": "5.0.2"
+  "devDependencies": {
+    "electron": "^17.0.1"
   },
-  "author": {
-    "name": "A Strapi developer"
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.1.0",
+    "@strapi/plugin-users-permissions": "4.1.0",
+    "@strapi/strapi": "4.1.0",
+    "sqlite3": "5.0.2",
+    "wait-on": "^6.0.1"
   },
   "strapi": {
     "uuid": "f11f9993-3182-4c05-9c36-d0f72aa9a7b4"
