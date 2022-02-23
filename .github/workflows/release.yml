@@ -14,9 +14,10 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      - name: Build
-        uses: bahmutov/npm-install@v1.6.0
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
         with:
+          node-version: 16
           useLockFile: false
 
       - name: Build/release Electron app
