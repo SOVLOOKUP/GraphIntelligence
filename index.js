@@ -40,7 +40,7 @@ if (nodeMode && fs.existsSync(first)) {
     app.quit();
   });
 } else {
-  require("./src-app");
+  require("./bin/app");
   app.whenReady().then(async () => {
     const w = await createWindow();
     if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
@@ -48,7 +48,7 @@ if (nodeMode && fs.existsSync(first)) {
     w.show();
 
     await waitOn({
-      resources: ["http://localhost:13327"],
+      resources: ["http://localhost:1337"],
       // 五分钟后超时
       timeout: 300000,
     });

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "author": "sovlookup<gonorth@qq.com>",
   "description": "GraphIntelligence 知识图谱一体化构建工具",
-  "main": "app.js",
+  "bin": "index.js",
   "scripts": {
     "dev": "strapi dev",
-    "start": "strapi start",
+    "start": "electron index.js",
     "dist": "electron-builder --publish never",
     "build": "strapi build",
     "cs": "config-sync"
@@ -33,6 +33,17 @@
     "npm": ">=6.0.0"
   },
   "build": {
-    "asar": false
+    "appId": "gi.lingthink.com",
+    "asar": false,
+    "productName": "知识图谱一体化构建器",
+    "linux": {
+      "target": "zip"
+    },
+    "mac": {
+      "target": "zip"
+    },
+    "win": {
+      "target": "zip"
+    }
   }
 }
