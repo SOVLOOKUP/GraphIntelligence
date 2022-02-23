@@ -12,7 +12,6 @@ async function createWindow() {
   return win;
 }
 
-// todo 改 db 并初始化
 app.whenReady().then(async () => {
   const w = await createWindow();
   if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
