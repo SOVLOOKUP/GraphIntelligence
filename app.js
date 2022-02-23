@@ -3,7 +3,7 @@ const waitOn = require("wait-on");
 const path = require("path");
 const fs = require("fs");
 const { Worker } = require("worker_threads");
-
+app.enableSandbox();
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
 });
@@ -21,7 +21,25 @@ async function createWindow() {
   return win;
 }
 
-if (!nodeMode) {
+const args = process.argv.slice(normalArgNum);
+const first = path.resolve(process.cwd(), args[0] ?? "");
+
+if (args[0] === "-h") {
+  console.log("App version:", app.getVersion());
+  console.log("Electron version:", process.versions.electron);
+  console.log("Chrome version:", process.versions.chrome);
+  console.log("Node.js version:", process.version);
+  process.exit();
+}
+
+if (nodeMode && fs.existsSync(first)) {
+  // 当传入参数时模仿 Node 的行为, 使 execa 正常工作
+  new Worker(first, {
+    argv: args.slice(1),
+  }).on("exit", () => {
+    app.quit();
+  });
+} else {
   require("./src-app");
   app.whenReady().then(async () => {
     const w = await createWindow();
@@ -37,23 +55,4 @@ if (!nodeMode) {
     // 等待strapi启动后启动窗口
     await w.loadURL("https://gi.lingthink.com");
   });
-} else {
-  // 当传入参数时模仿 Node 的行为, 使 execa 正常工作
-  const args = process.argv.slice(normalArgNum);
-  const first = path.resolve(process.cwd(), args[0]);
-  if (fs.existsSync(first)) {
-    const worker = new Worker(first, {
-      argv: args.slice(1),
-    });
-    worker.on("exit", () => {
-      app.quit();
-    });
-  } else {
-    console.log("App version:", app.getVersion());
-    console.log("Electron version:", process.versions.electron);
-    console.log("Chrome version:", process.versions.chrome);
-    console.log("Node.js version:", process.version);
-    first !== "-v" && console.error(`${first} not found`);
-    app.quit();
-  }
 }
