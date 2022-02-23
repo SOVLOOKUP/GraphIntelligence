@@ -3,7 +3,7 @@ const waitOn = require("wait-on");
 const path = require("path");
 const fs = require("fs");
 const { Worker } = require("worker_threads");
-app.enableSandbox();
+
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
 });
