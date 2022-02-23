@@ -15,10 +15,12 @@ if (!fs.existsSync(logPath)) fs.writeFileSync(logPath, "");
 const logStream = fs.createWriteStream(logPath, "utf8");
 
 (async () => {
+  console.log("App running at =>", execPath);
+  process.chdir(execPath);
   const { execaNode } = await import("execa");
   // 如果数据不存在则进行初始化
   if (!fs.existsSync(dataPath)) {
-    await execaNode(
+    const { stderr } = await execaNode(
       path.join(
         __dirname,
         "../node_modules/strapi-plugin-config-sync/server/cli.js"
@@ -29,6 +31,7 @@ const logStream = fs.createWriteStream(logPath, "utf8");
         stdout: logStream,
       }
     );
+    console.log(stderr);
   }
 
   await execaNode(
