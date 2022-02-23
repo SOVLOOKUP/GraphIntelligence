@@ -1,13 +1,33 @@
-const path = require("path");
-const { Worker } = require("worker_threads");
+require("./src-electron");
+const { app, BrowserWindow } = require("electron");
+const waitOn = require("wait-on");
 
-exports.default = () => {
-  process.chdir(__dirname);
-  new Worker(
-    path.join(__dirname, "node_modules/@strapi/strapi/bin/strapi.js"),
-    {
-      argv: ["dev"],
-      // argv: process.argv.slice(2),
-    }
-  );
-};
+async function createWindow() {
+  const win = new BrowserWindow({
+    show: false,
+    height: 10000,
+    width: 10000,
+    autoHideMenuBar: true,
+  });
+  return win;
+}
+
+// todo 改 db 并初始化
+app.whenReady().then(async () => {
+  const w = await createWindow();
+  if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
+  await w.loadFile("static/loading.html");
+  w.show();
+
+  await waitOn({
+    resources: ["http://localhost:1337"],
+    // 五分钟后超时
+    timeout: 300000,
+  });
+  // 等待strapi启动后启动窗口
+  await w.loadURL("https://gi.lingthink.com");
+});
+
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") app.quit();
+});
