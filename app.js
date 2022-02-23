@@ -1,6 +1,15 @@
-require("./src-app");
 const { app, BrowserWindow } = require("electron");
 const waitOn = require("wait-on");
+const path = require("path");
+const fs = require("fs");
+const { Worker } = require("worker_threads");
+
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") app.quit();
+});
+
+const normalArgNum = !app.isPackaged ? 2 : 1;
+const nodeMode = process.argv.length > normalArgNum;
 
 async function createWindow() {
   const win = new BrowserWindow({
@@ -12,21 +21,39 @@ async function createWindow() {
   return win;
 }
 
-app.whenReady().then(async () => {
-  const w = await createWindow();
-  if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
-  await w.loadFile("static/loading.html");
-  w.show();
+if (!nodeMode) {
+  require("./src-app");
+  app.whenReady().then(async () => {
+    const w = await createWindow();
+    if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
+    await w.loadFile("static/loading.html");
+    w.show();
 
-  await waitOn({
-    resources: ["http://localhost:1337"],
-    // 五分钟后超时
-    timeout: 300000,
+    await waitOn({
+      resources: ["http://localhost:1337"],
+      // 五分钟后超时
+      timeout: 300000,
+    });
+    // 等待strapi启动后启动窗口
+    await w.loadURL("https://gi.lingthink.com");
   });
-  // 等待strapi启动后启动窗口
-  await w.loadURL("https://gi.lingthink.com");
-});
-
-app.on("window-all-closed", function () {
-  if (process.platform !== "darwin") app.quit();
-});
+} else {
+  // 当传入参数时模仿 Node 的行为, 使 execa 正常工作
+  const args = process.argv.slice(normalArgNum);
+  const first = path.resolve(process.cwd(), args[0]);
+  if (fs.existsSync(first)) {
+    const worker = new Worker(first, {
+      argv: args.slice(1),
+    });
+    worker.on("exit", () => {
+      app.quit();
+    });
+  } else {
+    console.log("App version:", app.getVersion());
+    console.log("Electron version:", process.versions.electron);
+    console.log("Chrome version:", process.versions.chrome);
+    console.log("Node.js version:", process.version);
+    first !== "-v" && console.error(`${first} not found`);
+    app.quit();
+  }
+}

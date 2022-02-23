@@ -1,10 +1,18 @@
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
-
 const execPath = path.join(__dirname, "..");
-const dataPath = path.join(os.homedir(), "gi", "data.db");
-// const dbInitPath = path.join(__dirname, "../static/data.db");
+const appDataDir = path.join(os.homedir(), "gi");
+// 数据目录
+const dataPath = path.join(appDataDir, "data.db");
+// 日志目录
+const logDirPath = path.join(appDataDir, "log");
+if (!fs.existsSync(logDirPath)) fs.mkdirSync(logDirPath, { recursive: true });
+// 日志文件
+const logPath = path.join(logDirPath, `log-${Date.now()}.txt`);
+if (!fs.existsSync(logPath)) fs.writeFileSync(logPath, "");
+// 日志流
+const logStream = fs.createWriteStream(logPath, "utf8");
 
 (async () => {
   const { execaNode } = await import("execa");
@@ -18,7 +26,7 @@ const dataPath = path.join(os.homedir(), "gi", "data.db");
       ["import", "-y"],
       {
         execPath,
-        stdout: process.stdout,
+        stdout: logStream,
       }
     );
   }
@@ -28,7 +36,7 @@ const dataPath = path.join(os.homedir(), "gi", "data.db");
     ["start"],
     {
       execPath,
-      stdout: process.stdout,
+      stdout: logStream,
     }
   );
 })();
