@@ -1,4 +1,4 @@
-require("./src-electron");
+require("./src-app");
 const { app, BrowserWindow } = require("electron");
 const waitOn = require("wait-on");
 
