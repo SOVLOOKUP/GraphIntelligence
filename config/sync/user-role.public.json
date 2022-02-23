@@ -1,0 +1,94 @@
+{
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "permissions": [
+    {
+      "action": "api::gi-concept.gi-concept.create"
+    },
+    {
+      "action": "api::gi-concept.gi-concept.delete"
+    },
+    {
+      "action": "api::gi-concept.gi-concept.find"
+    },
+    {
+      "action": "api::gi-concept.gi-concept.findOne"
+    },
+    {
+      "action": "api::gi-concept.gi-concept.update"
+    },
+    {
+      "action": "api::gi-data-source.gi-data-source.create"
+    },
+    {
+      "action": "api::gi-data-source.gi-data-source.delete"
+    },
+    {
+      "action": "api::gi-data-source.gi-data-source.find"
+    },
+    {
+      "action": "api::gi-data-source.gi-data-source.findOne"
+    },
+    {
+      "action": "api::gi-data-source.gi-data-source.update"
+    },
+    {
+      "action": "api::gi-model.gi-model.create"
+    },
+    {
+      "action": "api::gi-model.gi-model.delete"
+    },
+    {
+      "action": "api::gi-model.gi-model.find"
+    },
+    {
+      "action": "api::gi-model.gi-model.findOne"
+    },
+    {
+      "action": "api::gi-model.gi-model.update"
+    },
+    {
+      "action": "api::gi-tag.gi-tag.create"
+    },
+    {
+      "action": "api::gi-tag.gi-tag.delete"
+    },
+    {
+      "action": "api::gi-tag.gi-tag.find"
+    },
+    {
+      "action": "api::gi-tag.gi-tag.findOne"
+    },
+    {
+      "action": "api::gi-tag.gi-tag.update"
+    },
+    {
+      "action": "api::gi-task.gi-task.create"
+    },
+    {
+      "action": "api::gi-task.gi-task.delete"
+    },
+    {
+      "action": "api::gi-task.gi-task.find"
+    },
+    {
+      "action": "api::gi-task.gi-task.findOne"
+    },
+    {
+      "action": "api::gi-task.gi-task.update"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

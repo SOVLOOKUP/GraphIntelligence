@@ -1,0 +1,250 @@
+{
+  "name": "Editor",
+  "code": "strapi-editor",
+  "description": "Editors can manage and publish contents including those of other users.",
+  "permissions": [
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-concept.gi-concept",
+      "properties": {
+        "fields": [
+          "name",
+          "jsonldurl",
+          "tag.gi_tag"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-concept.gi-concept",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-concept.gi-concept",
+      "properties": {
+        "fields": [
+          "name",
+          "jsonldurl",
+          "tag.gi_tag"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-concept.gi-concept",
+      "properties": {
+        "fields": [
+          "name",
+          "jsonldurl",
+          "tag.gi_tag"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-data-source.gi-data-source",
+      "properties": {
+        "fields": [
+          "name",
+          "data",
+          "metadata.name",
+          "metadata.type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-data-source.gi-data-source",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-data-source.gi-data-source",
+      "properties": {
+        "fields": [
+          "name",
+          "data",
+          "metadata.name",
+          "metadata.type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-data-source.gi-data-source",
+      "properties": {
+        "fields": [
+          "name",
+          "data",
+          "metadata.name",
+          "metadata.type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-model.gi-model",
+      "properties": {
+        "fields": [
+          "name",
+          "data"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-model.gi-model",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::gi-model.gi-model",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-model.gi-model",
+      "properties": {
+        "fields": [
+          "name",
+          "data"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-model.gi-model",
+      "properties": {
+        "fields": [
+          "name",
+          "data"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-tag.gi-tag",
+      "properties": {
+        "fields": [
+          "name",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-tag.gi-tag",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-tag.gi-tag",
+      "properties": {
+        "fields": [
+          "name",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-tag.gi-tag",
+      "properties": {
+        "fields": [
+          "name",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-task.gi-task",
+      "properties": {
+        "fields": [
+          "name",
+          "taskMeta",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-task.gi-task",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-task.gi-task",
+      "properties": {
+        "fields": [
+          "name",
+          "taskMeta",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-task.gi-task",
+      "properties": {
+        "fields": [
+          "name",
+          "taskMeta",
+          "description"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.copy-link",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.create",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.download",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.update",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    }
+  ]
+}

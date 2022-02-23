@@ -10,7 +10,7 @@
     "start": "strapi start",
     "dist": "electron-builder --publish never",
     "build": "strapi build",
-    "strapi": "strapi"
+    "cs": "config-sync"
   },
   "devDependencies": {
     "electron": "^17.0.1",
@@ -21,6 +21,7 @@
     "@strapi/plugin-users-permissions": "4.1.0",
     "@strapi/strapi": "4.1.0",
     "sqlite3": "5.0.2",
+    "strapi-plugin-config-sync": "^1.0.0-beta.8",
     "wait-on": "^6.0.1"
   },
   "strapi": {
