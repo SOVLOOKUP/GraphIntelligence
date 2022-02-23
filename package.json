@@ -37,10 +37,10 @@
     "asar": false,
     "productName": "知识图谱一体化构建器",
     "linux": {
-      "target": "zip"
+      "target": "tar.gz"
     },
     "mac": {
-      "target": "zip"
+      "target": "dmg"
     },
     "win": {
       "target": "zip"
