@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-          useLockFile: false
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
