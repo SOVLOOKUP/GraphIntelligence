@@ -48,7 +48,7 @@ if (nodeMode && fs.existsSync(first)) {
     w.show();
 
     await waitOn({
-      resources: ["http://localhost:1337"],
+      resources: ["http://localhost:13327"],
       // 五分钟后超时
       timeout: 300000,
     });
