@@ -36,7 +36,7 @@ const logStream = fs.createWriteStream(logPath, "utf8");
 
   await execaNode(
     path.resolve(execPath, "node_modules/@strapi/strapi/bin/strapi.js"),
-    ["start"],
+    ["dev"],
     {
       execPath,
       stdout: logStream,

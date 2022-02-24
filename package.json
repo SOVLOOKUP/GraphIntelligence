@@ -1,7 +1,7 @@
 {
   "name": "graphintelligence",
   "private": true,
-  "version": "v0.0.0-beta.3",
+  "version": "v0.0.0-beta.4",
   "author": "sovlookup<gonorth@qq.com>",
   "description": "GraphIntelligence 知识图谱一体化构建工具",
   "main": "index.js",
@@ -19,7 +19,6 @@
     "@strapi/plugin-users-permissions": "4.1.0",
     "@strapi/strapi": "4.1.0",
     "execa": "^6.1.0",
-    "got": "^12.0.1",
     "sqlite3": "5.0.2",
     "strapi-plugin-config-sync": "^1.0.0-beta.8",
     "wait-on": "^6.0.1"
