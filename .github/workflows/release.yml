@@ -33,6 +33,6 @@ jobs:
       
       - name: Build/release Electron app
         run: yarn release
-        with:
+        env:
           github_token: ${{ secrets.github_token }}
           
