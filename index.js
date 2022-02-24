@@ -57,6 +57,7 @@ if (args[0] === "-h") {
       await w.loadURL("https://gi.lingthink.com");
     });
     const { execaNode } = await import("execa");
+    process.chdir(__dirname);
     await execaNode(path.resolve(__dirname, "bin/app.js"), {
       stdout: process.stdout,
     });
