@@ -1,7 +1,6 @@
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
-const { Notification } = require("electron");
 const execPath = path.resolve(__dirname, "..");
 const appDataDir = path.resolve(os.homedir(), "gi");
 // 数据目录
@@ -15,9 +14,10 @@ if (!fs.existsSync(logPath)) fs.writeFileSync(logPath, "");
 // 日志流
 const logStream = fs.createWriteStream(logPath, "utf8");
 
-(async () => {
+const start = async (Notification) => {
   console.log("App running at =>", execPath);
   const { execaNode } = await import("execa");
+  process.chdir(execPath);
   // 如果数据不存在则进行初始化
   if (!fs.existsSync(dataPath)) {
     new Notification({
@@ -46,4 +46,6 @@ const logStream = fs.createWriteStream(logPath, "utf8");
       stdout: logStream,
     }
   );
-})();
+}
+
+exports.default = start
