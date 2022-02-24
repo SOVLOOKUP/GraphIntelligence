@@ -35,9 +35,6 @@
     "appId": "gi.lingthink.com",
     "asar": false,
     "productName": "GraphIntelligence 知识图谱系统",
-    "directories": {
-      "output": "output"
-    },
     "publish": [
       {
         "provider": "github",
