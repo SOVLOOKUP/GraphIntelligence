@@ -3,7 +3,11 @@ const waitOn = require("wait-on");
 const path = require("path");
 const fs = require("fs");
 const { Worker } = require("worker_threads");
-
+const { autoUpdater } = require("electron-updater");
+autoUpdater.checkForUpdatesAndNotify({
+  title: "更新程序",
+  body: "检测到更新, 是否下载?",
+});
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
 });
