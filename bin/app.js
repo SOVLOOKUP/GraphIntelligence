@@ -1,6 +1,7 @@
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
+const { Notification } = require("electron");
 const execPath = path.resolve(__dirname, "..");
 const appDataDir = path.resolve(os.homedir(), "gi");
 // 数据目录
@@ -19,6 +20,10 @@ const logStream = fs.createWriteStream(logPath, "utf8");
   const { execaNode } = await import("execa");
   // 如果数据不存在则进行初始化
   if (!fs.existsSync(dataPath)) {
+    new Notification({
+      title: "欢迎使用 GraphIntelligence 知识图谱系统",
+      body: "第一次启动时间较长, 请您耐心等待, 初始化完成后将自动打开后台管理界面",
+    }).show();
     const { stderr } = await execaNode(
       path.resolve(
         execPath,
