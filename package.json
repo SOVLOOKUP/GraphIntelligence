@@ -1,7 +1,7 @@
 {
   "name": "graphintelligence",
   "private": true,
-  "version": "v0.0.1-beta.1",
+  "version": "v0.0.1-beta.2",
   "author": "sovlookup<gonorth@qq.com>",
   "description": "GraphIntelligence 知识图谱一体化构建工具",
   "main": "index.js",
@@ -35,13 +35,22 @@
     "asar": false,
     "productName": "GraphIntelligence 知识图谱系统",
     "linux": {
-      "target": "tar.gz"
+      "target": "tar.gz",
+      "icon": "static/icon.png"
     },
     "mac": {
-      "target": "dmg"
+      "target": [
+        "dmg",
+        "pkg"
+      ],
+      "icon": "static/icon.png"
     },
     "win": {
-      "target": "zip"
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "static/icon.png"
     }
   }
 }
