@@ -17,6 +17,7 @@ async function createWindow() {
     height: 10000,
     width: 10000,
     autoHideMenuBar: true,
+    webPreferences: {},
   });
   return win;
 }
@@ -32,27 +33,51 @@ if (args[0] === "-h") {
   process.exit();
 }
 
-if (nodeMode && fs.existsSync(first)) {
-  // 当传入参数时模仿 Node 的行为, 使 execa 正常工作
-  new Worker(first, {
-    argv: args.slice(1),
-  }).on("exit", () => {
-    app.quit();
-  });
-} else {
-  require("./bin/app");
-  app.whenReady().then(async () => {
-    const w = await createWindow();
-    if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
-    await w.loadFile("static/loading.html");
-    w.show();
-
-    await waitOn({
-      resources: ["http://localhost:1337"],
-      // 五分钟后超时
-      timeout: 300000,
+(async () => {
+  if (nodeMode && fs.existsSync(first)) {
+    // 当传入参数时模仿 Node 的行为, 使 execa 正常工作
+    new Worker(first, {
+      argv: args.slice(1),
+    }).on("exit", () => {
+      app.quit();
     });
-    // 等待strapi启动后启动窗口
-    await w.loadURL("https://gi.lingthink.com");
-  });
-}
+  } else {
+    require("./bin/app");
+    const got = (await import("got")).default;
+
+    app.whenReady().then(async () => {
+      const w = await createWindow();
+      if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
+      await w.loadFile("static/loading.html");
+      w.show();
+
+      w.webContents.session.protocol.interceptHttpProtocol(
+        "http",
+        (r, callback) => {
+          got(r.url, {
+            method: r.method,
+            headers: r.headers,
+            body: r.uploadData,
+          }).then((res) => {
+            const resp = {
+              statusCode: res.statusCode,
+              headers: res.rawHeaders,
+              data: res.rawBody,
+              method: r.method,
+              url: res.url,
+              session: null,
+            };
+            callback(resp);
+          });
+        }
+      );
+      await waitOn({
+        resources: ["http://localhost:1337"],
+        // 五分钟后超时
+        timeout: 300000,
+      });
+      // 等待strapi启动后启动窗口
+      await w.loadURL("https://gi.lingthink.com");
+    });
+  }
+})();
