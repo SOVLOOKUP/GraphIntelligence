@@ -34,5 +34,5 @@ jobs:
       - name: Build/release Electron app
         run: yarn release
         env:
-          github_token: ${{ secrets.github_token }}
+          GH_TOKEN: ${{ secrets.github_token }}
           
