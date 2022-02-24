@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Notification } = require("electron");
 const waitOn = require("wait-on");
 const path = require("path");
 const fs = require("fs");
@@ -56,10 +56,8 @@ if (args[0] === "-h") {
       // 等待strapi启动后启动窗口
       await w.loadURL("https://gi.lingthink.com");
     });
-    const { execaNode } = await import("execa");
-    process.chdir(__dirname);
-    await execaNode(path.resolve(__dirname, "bin/app.js"), {
-      stdout: process.stdout,
-    });
+    
+    const start = require("./bin/app").default
+    start(Notification)
   }
 })();
