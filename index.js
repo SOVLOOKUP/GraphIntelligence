@@ -5,8 +5,8 @@ const fs = require("fs");
 const { Worker } = require("worker_threads");
 const { autoUpdater } = require("electron-updater");
 autoUpdater.checkForUpdatesAndNotify({
-  title: "更新程序",
-  body: "检测到更新, 是否下载?",
+  title: "GraphIntelligence\n",
+  body: "检测到更新, 正在自动为您升级...",
 });
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") app.quit();
@@ -15,16 +15,13 @@ app.on("window-all-closed", function () {
 const normalArgNum = !app.isPackaged ? 2 : 1;
 const nodeMode = process.argv.length > normalArgNum;
 
-async function createWindow() {
-  const win = new BrowserWindow({
+const createWindow = () =>
+  new BrowserWindow({
     show: false,
     height: 10000,
     width: 10000,
     autoHideMenuBar: true,
-    webPreferences: {},
   });
-  return win;
-}
 
 const args = process.argv.slice(normalArgNum);
 const first = path.resolve(process.cwd(), args[0] ?? "");
@@ -47,10 +44,10 @@ if (args[0] === "-h") {
     });
   } else {
     app.whenReady().then(async () => {
-      const w = await createWindow();
-      if (!app.isPackaged) w.webContents.openDevTools({ mode: "detach" });
-      await w.loadFile("static/loading.html");
-      w.show();
+      const mainWin = createWindow();
+      if (!app.isPackaged) mainWin.webContents.openDevTools({ mode: "detach" });
+      await mainWin.loadFile("static/loading.html");
+      mainWin.show();
 
       await waitOn({
         resources: ["http://localhost:1337"],
@@ -58,10 +55,21 @@ if (args[0] === "-h") {
         timeout: 300000,
       });
       // 等待strapi启动后启动窗口
-      await w.loadURL("https://gi.lingthink.com");
+      await mainWin.loadURL("https://gi.lingthink.com");
+
+      // 新窗口
+      mainWin.webContents.setWindowOpenHandler(() => ({
+        action: "allow",
+        overrideBrowserWindowOptions: {
+          width: 10000,
+          height: 10000,
+          title: "本体编辑器",
+          autoHideMenuBar: true,
+        },
+      }));
     });
-    
-    const start = require("./bin/app").default
-    start(Notification)
+
+    const start = require("./bin/app").default;
+    start(Notification);
   }
 })();
