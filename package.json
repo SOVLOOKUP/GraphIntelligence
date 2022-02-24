@@ -65,7 +65,8 @@
     "win": {
       "target": [
         "zip",
-        "nsis"
+        "nsis",
+        "nsis-web"
       ],
       "icon": "static/icon.png"
     }
