@@ -1,57 +1,40 @@
-# 🚀 Getting started with Strapi
+<div align="center">
+<img height="200px" src="https://github.com/SOVLOOKUP/GraphIntelligence/raw/master/static/icon.png"/>
+<h1>🚀 GraphIntelligence 知识图谱系统</h1>
+   <p>
+GraphIntelligence 知识图谱一体化构建工具
+</p>
+ <p>
+可用于领域本体协作构建、知识图谱构建、图数据库 ETL 等等.
+</p>
+<p>
+计划集成多种图谱应用, 打造一个强大的情报分析工具箱.
+</p>
+</div>
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+## 基本功能
 
-### `develop`
+1. [x] 标签编辑
+2. [x] 标签筛选
+3. [x] 概念编辑
+4. [x] 概念筛选
+5. [x] 数据集上传 
+6. [x] 数据集管理
+7. [x] 可配置后端进行进行数据共享
+8. [x] 构建/应用模式切换
+9. [x] 概念可选引用 JSON-LD
+10. [x] 概念与数据源匹配
+11. [x] 构建到图数据库
+12. [x] 跨平台且安装便捷
+13. [ ] neo4j 构建驱动
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+## RoadMap
 
-```
-npm run develop
-# or
-yarn develop
-```
+1. [ ] 官方网站与论坛
+2. [ ] 插件化数据注入模块
+3. [ ] 应用插件市场
+4. [ ] 从多种数据库导入数据
 
-### `start`
+## 联系
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+wechat: xiafanGO-NORTH
