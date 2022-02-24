@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "strapi dev",
     "start": "electron index.js",
-    "release": "electron-builder --publish always"
+    "release": "electron-builder"
   },
   "devDependencies": {
     "electron": "^17.1.0",
