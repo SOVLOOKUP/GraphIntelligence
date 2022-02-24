@@ -47,8 +47,7 @@
     "linux": {
       "target": [
         "deb",
-        "rpm",
-        "pacman"
+        "rpm"
       ],
       "icon": "static/icon.png"
     },
