@@ -15,13 +15,13 @@
     "electron-builder": "^22.14.13"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.1.0",
-    "@strapi/plugin-users-permissions": "4.1.0",
-    "@strapi/strapi": "4.1.0",
+    "@strapi/plugin-i18n": "4.1.1",
+    "@strapi/plugin-users-permissions": "4.1.1",
+    "@strapi/strapi": "4.1.1",
+    "strapi-plugin-config-sync": "^1.0.0-beta.8",
+    "sqlite3": "5.0.2",
     "electron-updater": "^4.6.5",
     "execa": "^6.1.0",
-    "sqlite3": "5.0.2",
-    "strapi-plugin-config-sync": "^1.0.0-beta.8",
     "wait-on": "^6.0.1"
   },
   "strapi": {
