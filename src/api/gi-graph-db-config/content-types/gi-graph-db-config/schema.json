@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gi_graph_db_configs",
+  "info": {
+    "singularName": "gi-graph-db-config",
+    "pluralName": "gi-graph-db-configs",
+    "displayName": "GIGraphDBConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "config": {
+      "type": "json",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

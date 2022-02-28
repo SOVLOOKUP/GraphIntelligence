@@ -34,6 +34,21 @@
       "action": "api::gi-data-source.gi-data-source.update"
     },
     {
+      "action": "api::gi-graph-db-config.gi-graph-db-config.create"
+    },
+    {
+      "action": "api::gi-graph-db-config.gi-graph-db-config.delete"
+    },
+    {
+      "action": "api::gi-graph-db-config.gi-graph-db-config.find"
+    },
+    {
+      "action": "api::gi-graph-db-config.gi-graph-db-config.findOne"
+    },
+    {
+      "action": "api::gi-graph-db-config.gi-graph-db-config.update"
+    },
+    {
       "action": "api::gi-model.gi-model.create"
     },
     {

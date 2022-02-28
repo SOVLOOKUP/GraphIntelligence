@@ -1,7 +1,7 @@
 {
   "name": "graphintelligence",
   "private": true,
-  "version": "v0.0.1-beta.5",
+  "version": "v0.0.1-beta.6",
   "author": "sovlookup<gonorth@qq.com>",
   "description": "GraphIntelligence 知识图谱一体化构建工具",
   "main": "index.js",

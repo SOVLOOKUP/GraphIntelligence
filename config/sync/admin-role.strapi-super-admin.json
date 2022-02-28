@@ -92,6 +92,48 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
+      "subject": "api::gi-graph-db-config.gi-graph-db-config",
+      "properties": {
+        "fields": [
+          "name",
+          "config",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::gi-graph-db-config.gi-graph-db-config",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::gi-graph-db-config.gi-graph-db-config",
+      "properties": {
+        "fields": [
+          "name",
+          "config",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::gi-graph-db-config.gi-graph-db-config",
+      "properties": {
+        "fields": [
+          "name",
+          "config",
+          "type"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
       "subject": "api::gi-model.gi-model",
       "properties": {
         "fields": [
@@ -103,12 +145,6 @@
     },
     {
       "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::gi-model.gi-model",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
       "subject": "api::gi-model.gi-model",
       "properties": {},
       "conditions": []

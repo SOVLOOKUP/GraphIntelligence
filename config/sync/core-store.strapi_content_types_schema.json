@@ -1531,6 +1531,96 @@
       "actions": {},
       "lifecycles": {}
     },
+    "api::gi-graph-db-config.gi-graph-db-config": {
+      "kind": "collectionType",
+      "collectionName": "gi_graph_db_configs",
+      "info": {
+        "singularName": "gi-graph-db-config",
+        "pluralName": "gi-graph-db-configs",
+        "displayName": "GIGraphDBConfig",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "config": {
+          "type": "json",
+          "required": true
+        },
+        "type": {
+          "type": "string",
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "gi_graph_db_configs",
+        "info": {
+          "singularName": "gi-graph-db-config",
+          "pluralName": "gi-graph-db-configs",
+          "displayName": "GIGraphDBConfig",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "config": {
+            "type": "json",
+            "required": true
+          },
+          "type": {
+            "type": "string",
+            "required": true
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "gi-graph-db-config",
+      "connection": "default",
+      "uid": "api::gi-graph-db-config.gi-graph-db-config",
+      "apiName": "gi-graph-db-config",
+      "globalId": "GiGraphDbConfig",
+      "actions": {},
+      "lifecycles": {}
+    },
     "api::gi-model.gi-model": {
       "kind": "collectionType",
       "collectionName": "gi_models",
@@ -1541,7 +1631,7 @@
         "description": ""
       },
       "options": {
-        "draftAndPublish": true
+        "draftAndPublish": false
       },
       "pluginOptions": {},
       "attributes": {
@@ -1557,12 +1647,6 @@
         },
         "updatedAt": {
           "type": "datetime"
-        },
-        "publishedAt": {
-          "type": "datetime",
-          "configurable": false,
-          "writable": true,
-          "visible": false
         },
         "createdBy": {
           "type": "relation",
@@ -1594,7 +1678,7 @@
           "description": ""
         },
         "options": {
-          "draftAndPublish": true
+          "draftAndPublish": false
         },
         "pluginOptions": {},
         "attributes": {
