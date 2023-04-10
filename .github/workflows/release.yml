@@ -14,23 +14,23 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-        
+
       - name: Install Node.js, NPM and Yarn
         uses: actions/setup-node@v2
         with:
           node-version: 16
-        
+
       # - run: yarn config set registry https://repo.huaweicloud.com/repository/npm/
-        
-      - uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: yarn.lock
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      
-      # - run: yarn install --no-lockfile
-      
+
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: node_modules
+      #     key: yarn.lock
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
+
+      - run: npm install
+
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
