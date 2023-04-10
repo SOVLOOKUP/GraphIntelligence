@@ -55,7 +55,7 @@ if (args[0] === "-h") {
         timeout: 300000,
       });
       // 等待strapi启动后启动窗口
-      await mainWin.loadURL("https://gi.lingthink.com");
+      await mainWin.loadURL("https://graph-builder.pages.dev/");
 
       // 新窗口
       mainWin.webContents.setWindowOpenHandler(() => ({
